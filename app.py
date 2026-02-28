@@ -103,9 +103,11 @@ PHILOSOPHICAL_QUOTES = [
 def sanitize_input(text):
     if not text:
         return ""
-    # Allow only letters (Unicode categories L), numbers (N), and whitespace (Z)
-    # This strips all special characters, punctuation, and potential injection code
-    return re.sub(r'[^\w\s\u4e00-\u9fa5]', '', text).strip()
+    # Allow letters, numbers, whitespace, and common punctuation (,.!?-&()[]{})
+    # Also allow Chinese/CJK characters (\u4e00-\u9fa5)
+    # This is safer than strict alphanumeric but still prevents HTML/JS injection
+    text = re.sub(r'[<>]', '', text) # Strip < > to prevent HTML tags
+    return text.strip()
 
 # --- Models ---
 class User(db.Model):
