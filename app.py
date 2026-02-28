@@ -15,8 +15,9 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY', 'digital_rip_secret_key_local_dev')
 
 # Setup Static Files for Gunicorn/Zeabur using Whitenoise
-# This ensures static files (CSS, Images) are served correctly in production
-app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/', prefix='static/')
+# Use absolute path to static folder to avoid relative path confusion
+static_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
+app.wsgi_app = WhiteNoise(app.wsgi_app, root=static_root, prefix='static/')
 
 # Detect if we are on Zeabur (PostgreSQL) or Local (SQLite)
 # Zeabur provides DATABASE_URL env var when PostgreSQL is linked
