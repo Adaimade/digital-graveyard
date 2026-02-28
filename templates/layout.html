@@ -5,7 +5,202 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Graveyard (R.I.P)</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+body {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 20px;
+    image-rendering: pixelated;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+
+a {
+    color: #00ff00;
+    text-decoration: none;
+    border-bottom: 2px solid #00ff00;
+}
+
+a:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
+
+.container {
+    max_width: 800px;
+    margin: 0 auto;
+    border: 4px solid #ffffff;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 10px 10px 0px #555555;
+}
+
+header {
+    border-bottom: 2px dashed #555555;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+nav {
+    display: flex;
+    justify_content: center;
+    gap: 20px;
+}
+
+.graveyard {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grave {
+    border: 4px solid #888888;
+    background-color: #333333;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    box-shadow: 5px 5px 0px #000000;
+}
+
+.tombstone {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pixel-icon {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 10px;
+    image-rendering: pixelated;
+}
+
+/* Old emoji style removed */
+/* .emoji { font-size: 3em; display: block; margin-bottom: 10px; } */
+
+.dates {
+    font-size: 0.6em;
+    color: #aaaaaa;
+    margin-bottom: 10px;
+}
+
+.eulogy {
+    font-style: italic;
+    font-size: 0.7em;
+    margin: 10px 0;
+    border-top: 1px dotted #888888;
+    border-bottom: 1px dotted #888888;
+    padding: 5px;
+}
+
+.function {
+    font-size: 0.7em;
+}
+
+.prayer button {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 5px 10px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    font-size: 0.7em;
+}
+
+.prayer button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.flashes {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.flashes li {
+    padding: 10px;
+    border: 2px solid;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.flashes .success {
+    border-color: #00ff00;
+    color: #00ff00;
+}
+
+.flashes .error {
+    border-color: #ff0000;
+    color: #ff0000;
+}
+
+.flashes .info {
+    border-color: #0000ff;
+    color: #0000ff;
+}
+
+.flashes .warning {
+    border-color: #ffff00;
+    color: #ffff00;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-size: 0.7em;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    background-color: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace; /* Monospaced for input looks retro */
+}
+
+button[type="submit"] {
+    background-color: #000000;
+    color: #00ff00;
+    border: 2px solid #00ff00;
+    padding: 10px;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #00ff00;
+    color: #000000;
+}
+
+.hint {
+    font-size: 0.6em;
+    color: #888888;
+    margin-bottom: 5px;
+    font-style: italic;
+}
+    </style>
 </head>
 <body>
     <div class="container">
