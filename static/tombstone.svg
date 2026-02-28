@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+  <rect x="4" y="2" width="8" height="14" fill="#888888" />
+  <rect x="3" y="4" width="10" height="12" fill="#888888" />
+  <rect x="5" y="1" width="6" height="1" fill="#888888" />
+  <!-- Shadow/Depth -->
+  <rect x="12" y="4" width="1" height="12" fill="#555555" />
+  <rect x="4" y="15" width="8" height="1" fill="#555555" />
+  <!-- Text "RIP" - simplified pixel representation -->
+  <rect x="5" y="5" width="6" height="4" fill="#333333" /> <!-- Dark plaque area -->
+  <path d="M6 6 h1 v1 h-1 v1 h-1 v-2 h1 M8 6 h1 v2 h-1 v-2 M10 6 h1 v1 h-1 v1 h-1 v-2 h1" fill="#bbbbbb" />
+  <!-- Grass at bottom -->
+  <rect x="2" y="15" width="12" height="1" fill="#00AA00" opacity="0.5"/>
+</svg>

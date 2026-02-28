@@ -1,0 +1,8 @@
+flask
+flask-sqlalchemy
+google-generativeai
+python-dotenv
+werkzeug
+gunicorn
+psycopg2-binary
+requests

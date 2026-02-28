@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Join the Mourners</h2>
+<p>Identify yourself with a custom ID and email.</p>
+<form method="POST">
+    <div class="field">
+        <label for="custom_id">Custom ID (Your Digital Name):</label>
+        <input type="text" id="custom_id" name="custom_id" required>
+    </div>
+    <div class="field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <button type="submit">Register ⚰️</button>
+</form>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="graveyard">
+    {% for project in projects %}
+        <div class="grave">
+            <div class="tombstone">
+                <!-- Replaced emoji with 8-bit SVG image -->
+                <img src="{{ url_for('static', filename='tombstone.svg') }}" alt="RIP" class="pixel-icon">
+                <h2>{{ project.title }}</h2>
+                <p class="dates">Born: {{ project.birth_date }} | Died: {{ project.death_date }}</p>
+                <div class="eulogy">
+                    "{{ project.eulogy }}"
+                </div>
+                <p class="function"><strong>Original Function:</strong> {{ project.original_function }}</p>
+                <div class="prayer">
+                    <form action="{{ url_for('pray', project_id=project.id) }}" method="POST">
+                        <button type="submit">🙏 Pray ({{ project.prayers }})</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <p class="empty">No projects have been laid to rest yet... The graveyard is silent. 🌫️</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Lay a Project to Rest 💀</h2>
+<p>Document the life and death of your abandoned code.</p>
+<form method="POST">
+    <div class="field">
+        <label for="title">Project Title:</label>
+        <input type="text" id="title" name="title" required>
+    </div>
+    <div class="field">
+        <label for="function">Original Function:</label>
+        <textarea id="function" name="function" required></textarea>
+    </div>
+    <div class="field">
+        <label for="birth_date">Birth Date:</label>
+        <input type="date" id="birth_date" name="birth_date" required>
+    </div>
+    <div class="field">
+        <label for="death_date">Death Date:</label>
+        <input type="date" id="death_date" name="death_date">
+    </div>
+    <div class="field">
+        <label for="description">Additional Notes (Optional):</label>
+        <textarea id="description" name="description"></textarea>
+    </div>
+    <button type="submit">Lay to Rest ⚰️</button>
+</form>
+{% endblock %}

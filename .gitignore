@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+instance/
+.pytest_cache/
+.env
+graveyard.db
+*.sqlite3
+venv/
+.DS_Store
