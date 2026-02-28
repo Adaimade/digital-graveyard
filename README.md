@@ -29,7 +29,7 @@
 - **GitHub Identity**: 我們歡迎你使用 **GitHub Username** 註冊，以此標記你的數位足跡。
 - **Mourning System**: 為逝去的專案獻上祈禱 (🙏 Pray)，讓它的貢獻不被遺忘。
 
-**👉 [Enter the Graveyard](https://digital-graveyard.zeabur.app) (Coming Soon)**
+**👉 [Enter the Graveyard](https://digital-graveyard.zeabur.app) **
 
 ---
 
