@@ -27,17 +27,9 @@
 - **AI Eulogies**: 讓 Gemini AI 為它寫下最後的詩意悼詞。
 - **Philosophical Echoes**: 當數位沈默時，系統將隨機獻上來自尼采、蘇格拉底等哲人的經典名言。
 - **GitHub Identity**: 我們歡迎你使用 **GitHub Username** 註冊，以此標記你的數位足跡。
+- **Mourning System**: 為逝去的專案獻上祈禱 (🙏 Pray)，讓它的貢獻不被遺忘。
 
 **👉 [Enter the Graveyard](https://digital-graveyard.zeabur.app) (Coming Soon)**
-
----
-
-## 🛠️ Tech Stack (技術棧)
-- **Backend**: Python (Flask)
-- **Database**: PostgreSQL (Production) / SQLite (Dev)
-- **AI**: Google Gemini (1.5 Flash / Pro)
-- **Frontend**: HTML5 + CSS3 (Retro Pixel Art Style)
-- **Server**: Gunicorn
 
 ---
 
