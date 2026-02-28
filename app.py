@@ -221,6 +221,12 @@ def add_project():
         return redirect(url_for('login'))
     
     user = User.query.get(session['user_id'])
+    # Safety Check: If user ID in session doesn't exist in DB anymore (e.g. after DB reset)
+    if not user:
+        session.pop('user_id', None)
+        flash('Session expired or invalid. Please login again.', 'error')
+        return redirect(url_for('login'))
+
     today = datetime.date.today()
     
     if not user.is_admin:
