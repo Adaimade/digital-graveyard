@@ -6,15 +6,23 @@ import datetime
 import random
 import logging
 import re
+from whitenoise import WhiteNoise
 
 app = Flask(__name__)
 
 # --- Configuration for Zeabur ---
+# Use SECRET_KEY from ENV if available, else fallback to local (insecure) default for dev
 app.secret_key = os.environ.get('SECRET_KEY', 'digital_rip_secret_key_local_dev')
 
+# Setup Static Files for Gunicorn/Zeabur using Whitenoise
+# This ensures static files (CSS, Images) are served correctly in production
+app.wsgi_app = WhiteNoise(app.wsgi_app, root='static/', prefix='static/')
+
+# Detect if we are on Zeabur (PostgreSQL) or Local (SQLite)
+# Zeabur provides DATABASE_URL env var when PostgreSQL is linked
 database_url = os.environ.get('DATABASE_URL')
 if database_url and database_url.startswith("postgres://"):
-    database_url = database_url.replace("postgres://", "postgresql://", 1)
+    database_url = database_url.replace("postgres://", "postgresql://", 1) # SQLAlchemy 1.4+ fix
 
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url or 'sqlite:///graveyard.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
