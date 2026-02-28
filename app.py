@@ -20,8 +20,12 @@ static_root = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'static')
 app.wsgi_app = WhiteNoise(app.wsgi_app, root=static_root, prefix='static/')
 
 # Detect if we are on Zeabur (PostgreSQL) or Local (SQLite)
-# Zeabur provides DATABASE_URL env var when PostgreSQL is linked
+# Zeabur provides DATABASE_URL or POSTGRES_CONNECTION_STRING
 database_url = os.environ.get('DATABASE_URL')
+if not database_url:
+    # Fallback to Zeabur's auto-generated variable name
+    database_url = os.environ.get('POSTGRES_CONNECTION_STRING')
+
 if database_url and database_url.startswith("postgres://"):
     database_url = database_url.replace("postgres://", "postgresql://", 1) # SQLAlchemy 1.4+ fix
 
