@@ -232,7 +232,8 @@ def add_project():
             try:
                 prompt = f"Write a short, poetic, 8-bit style eulogy for a software project named '{title}'. It was born on {birth_date} and died on {death_date}. Its original function was: '{original_function}'. The tone should be somber but respectful, like a pixel art game over screen. Keep it under 100 words. Use emojis like 🕯️, 🕊️, 💀."
                 
-                models_to_try = ['gemini-pro', 'gemini-1.5-flash']
+                # Try different models if one fails (Priority: Gemini 2.0 Flash -> 1.5 Flash -> Pro)
+                models_to_try = ['gemini-2.0-flash', 'gemini-2.0-flash-exp', 'gemini-1.5-flash', 'gemini-pro']
                 response = None
                 for m_name in models_to_try:
                     try:
