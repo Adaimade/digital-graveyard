@@ -30,7 +30,7 @@ db = SQLAlchemy(app)
 
 # --- Gemini Config ---
 # Prefer ENV var, fallback to hardcoded (legacy/local) only if not set
-API_KEY = os.environ.get("GEMINI_API_KEY", "AIzaSyBkq7O1z_3wNq0oAs2SK-zpykRw9rRjTQg")
+API_KEY = os.environ.get("GEMINI_API_KEY")
 if API_KEY:
     try:
         genai.configure(api_key=API_KEY)
@@ -39,6 +39,8 @@ if API_KEY:
         app.logger.info("Gemini API configured.")
     except Exception as e:
         app.logger.error(f"Gemini Config Error: {e}")
+else:
+    app.logger.warning("GEMINI_API_KEY not set in environment.")
 
 # --- Models ---
 class User(db.Model):
