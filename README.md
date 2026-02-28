@@ -25,16 +25,12 @@
 ### 🕊️ What awaits you here? (這裡有什麼？)
 - **Pixel Memorials**: 為你的專案立一座 8-bit 像素墓碑。
 - **AI Eulogies**: 讓 Gemini AI 為它寫下最後的詩意悼詞。
-- **Philosophical Echoes**: 若 AI 沈默，系統將隨機獻上來自尼采、蘇格拉底等哲人的 50 句經典名言。
+- **Philosophical Echoes**: 當數位沈默時，系統將隨機獻上來自尼采、蘇格拉底等哲人的經典名言。
 - **GitHub Identity**: 我們歡迎你使用 **GitHub Username** 註冊，以此標記你的數位足跡。
 
 **👉 [Enter the Graveyard](https://digital-graveyard.zeabur.app) (Coming Soon)**
 
 ---
-
-## 🛡️ Safety & Wisdom (安全與智慧)
-- **Input Sanitization**: 嚴格過濾特殊符號，杜絕 Prompt Injection。
-- **Philosophical Fallback**: 當 AI API 未配置或連線失敗時，自動切換至內建的哲學名言庫，確保墓園永遠有詩意。
 
 ## 🛠️ Tech Stack (技術棧)
 - **Backend**: Python (Flask)
